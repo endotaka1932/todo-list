@@ -1,4 +1,5 @@
 @import 'header';
+@import 'form';
 
 html {
     word-spacing: 1px;
@@ -8,19 +9,15 @@ html {
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     height: 100%;
-    position: relative;
 }
 
 body {
+    font-family: Avenir;
+    font-style: normal;
     height: 100%;
     background-color:#FFF;
     font-size: 1em;
     color: #000000;
-  
-    p{
-      margin-block-end: 0;
-      margin-block-start: 0;
-    }
 
     a{
       text-decoration: none;
@@ -29,5 +26,7 @@ body {
   }
 
   .container {
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
