@@ -30,3 +30,17 @@ body {
     height: 100%;
     position: relative;
   }
+  
+  .add_boards {
+    display: block;
+    width: 90%;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 60px 0;
+
+    .content {
+      font-size: 18px;
+      text-align: center;
+    }
+  }

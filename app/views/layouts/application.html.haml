@@ -9,8 +9,11 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header
-      %p.header_title Boards
+    %header.header
+      =link_to root_path do
+        %p.header_title Boards
+      = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
+    
     %p.notice= notice
     %p.alert= alert
     = yield

@@ -2,6 +2,8 @@
 header{
     height: 58px;
     border-bottom: 1px #F2F2F2 solid;
+    display: flex;
+    justify-content: space-between;
     
     .header_title {
         font-weight: normal;
@@ -11,5 +13,11 @@ header{
         padding-left: 30px;
         margin-block-end: 0;
         margin-block-start: 0;
+    }
+
+    .header_loginBtn {
+        display: block;
+        padding-top: 18px;
+        padding-right: 10px;
     }
 }
