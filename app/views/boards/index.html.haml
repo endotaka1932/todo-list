@@ -12,8 +12,8 @@
         .edit-btn
           .dropdown
             = image_tag 'Combined Shape.png'
-            -# .dropdown-content
-            -#   = link_to 'Delete', board_path, data: { method: 'delete' }
+            .dropdown-content
+              = link_to 'Delete', board_path(id:board.id), data: { method: 'delete' }
   = link_to new_board_path do
     .add_boards
       %p.content + Add New Boards
