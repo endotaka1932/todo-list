@@ -1,5 +1,19 @@
 .container
   %h2 ALL Boards
+  - @boards.each do |board|
+    = link_to board_path(id:board.id) do
+      .boards
+        .task_title 
+          = board.title
+        .task_content 
+          = board.content
+        .avatar_image 
+          = image_tag 'Oval.png', class: 'boards-avatar'
+        .edit-btn
+          .dropdown
+            = image_tag 'Combined Shape.png'
+            -# .dropdown-content
+            -#   = link_to 'Delete', board_path, data: { method: 'delete' }
   = link_to new_board_path do
     .add_boards
       %p.content + Add New Boards

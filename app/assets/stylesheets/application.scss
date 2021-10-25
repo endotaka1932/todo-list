@@ -1,5 +1,6 @@
 @import 'header';
 @import 'form';
+@import 'boards';
 
 html {
     word-spacing: 1px;
@@ -31,9 +32,16 @@ body {
     position: relative;
   }
   
+  .clear::after {
+    content:'';
+    clear: both;
+    display: block;
+  }
+
   .add_boards {
     display: block;
     width: 90%;
+    margin: auto;
     background: #FFFFFF;
     border: 1px dashed rgba(0, 0, 0, 0.2);
     border-radius: 10px;
