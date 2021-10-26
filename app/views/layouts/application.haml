@@ -12,8 +12,14 @@
     %header.header
       =link_to root_path do
         %p.header_title Boards
-      = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
-    
+      - if user_signed_in?
+        .dropdown
+          = image_tag 'Oval.png', class: 'header_avatar dropbtn'
+          .dropdown-content
+            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+      - else
+        = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
+
     %p.notice= notice
     %p.alert= alert
     = yield
