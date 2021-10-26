@@ -9,12 +9,13 @@
           = board.content
         .avatar_image 
           = image_tag 'Oval.png', class: 'boards-avatar'
-        .edit-btn
-          .dropdown
-            = image_tag 'Combined Shape.png'
-            .dropdown-content
-              = link_to 'Edit', edit_board_path(id:board.id)
-              = link_to 'Delete', board_path(id:board.id), data: { method: 'delete' }
+        - if user_signed_in? && current_user.has_written(board)
+          .edit-btn
+            .dropdown
+              = image_tag 'Combined Shape.png'
+              .dropdown-content
+                = link_to 'Edit', edit_board_path(id:board.id)
+                = link_to 'Delete', board_path(id:board.id), data: { method: 'delete' }
   = link_to new_board_path do
     .add_boards
       %p.content + Add New Boards
