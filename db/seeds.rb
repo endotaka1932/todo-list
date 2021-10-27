@@ -7,8 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # mike = User.create!(email: 'mike@example.com', password: 'password')
 
-10.times do
-    Board.create!(
+john = User.create!(email: 'john@example.com', password: 'password')
+nike = User.create!(email: 'nike@example.com', password: 'password')
+
+5.times do
+    john.boards.create!(
+        title: Faker::Lorem.sentence(word_count: 1),
+        content: Faker::Lorem.sentence(word_count: 5)
+    )
+end
+
+5.times do
+    nike.boards.create!(
         title: Faker::Lorem.sentence(word_count: 1),
         content: Faker::Lorem.sentence(word_count: 5)
     )
