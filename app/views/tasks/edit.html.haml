@@ -1,6 +1,6 @@
 .container
-  %h2 New Card
-  = form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f|
+  %h2 Edit Card
+  = form_with(model: [@task.board, @task], local: true) do |f|
     %div
       = f.label :eyecatch, 'アイキャッチ'
     %div

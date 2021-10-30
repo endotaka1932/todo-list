@@ -1,5 +1,8 @@
 class TasksController < ApplicationController
 
+    def show
+    end
+
     def new
         board = Board.find(params[:board_id])
         @task = board.tasks.build
@@ -17,9 +20,18 @@ class TasksController < ApplicationController
     end
 
     def edit
+        @task = Task.find(params[:id])
     end
 
-    def updatate
+    def update
+        board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
+        if @task.update(task_params)
+            redirect_to board_path(board), notice: '更新しました'
+        else
+            flash[:error] = '更新できませんでした'
+            render :edit_board_task_path
+        end
     end
 
     def destroy
