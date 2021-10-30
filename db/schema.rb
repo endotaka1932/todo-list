@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_133958) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "board_id", null: false
+    t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "content", null: false
     t.integer "deadline"

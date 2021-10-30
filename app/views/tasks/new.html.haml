@@ -1,0 +1,21 @@
+.container
+  %h2 New Task
+  = form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f|
+    %div
+      = f.label :eyecatch, 'アイキャッチ'
+    %div
+      = f.file_field :eyecatch, class: 'select-area'
+    %div
+      = f.label :title, 'Name'
+    %div
+      = f.text_field 'title', class: 'text'
+    %div
+      = f.label :content, 'descrioption'
+    %div
+      = f.text_area 'content',class: 'text'
+    %div
+      = f.label :deadline, '期日'
+    %div
+      = f.date_field :deadline, class: 'select-area', min: Date.current 
+    %div
+      = f.submit 'Submit', class: 'btn-primary'

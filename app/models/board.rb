@@ -16,5 +16,4 @@
 class Board < ApplicationRecord
     belongs_to :User, optional: true
     has_many :tasks, dependent: :destroy
-
 end
