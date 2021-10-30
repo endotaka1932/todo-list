@@ -1,2 +1,21 @@
-%h2.board-title= @board.title
--# タスク一覧がくる
+.container
+  %h2.board-title= @board.title
+  - @tasks.each do |task|
+    = link_to board_path(id:task.id) do
+      .boards
+        .task_title 
+          = task.title
+        .task_content 
+          = task.content
+        .avatar_image 
+          = image_tag 'Oval.png', class: 'boards-avatar'
+        - if user_signed_in? && current_user.has_have(task)
+          .edit-btn
+            .dropdown
+              = image_tag 'Combined Shape.png'
+              .dropdown-content
+                = link_to 'Edit', edit_board_path(id:task.id)
+                = link_to 'Delete', board_path(id:task.id), data: { method: 'delete' }
+  = link_to new_board_path do
+    .add_boards
+      %p.content + Add New Boards

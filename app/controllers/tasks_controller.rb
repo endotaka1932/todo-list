@@ -10,7 +10,7 @@ class TasksController < ApplicationController
         @task = board.tasks.build(task_params)
         @task.user_id = current_user.id
         if @task.save!
-            redirect_to root_path
+            redirect_to board_task_path(@task.id)
         else
             render :new
         end
