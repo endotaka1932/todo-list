@@ -12,9 +12,10 @@ class TasksController < ApplicationController
         board = Board.find(params[:board_id])
         @task = board.tasks.build(task_params)
         @task.user_id = current_user.id
-        if @task.save!
-            redirect_to board_task_path(@task.id)
+        if @task.save
+            redirect_to board_path(@task.board_id), notice: '追加しました'
         else
+            flash.now[:error] = '保存に失敗しました'
             render :new
         end
     end
@@ -29,12 +30,16 @@ class TasksController < ApplicationController
         if @task.update(task_params)
             redirect_to board_path(board), notice: '更新しました'
         else
-            flash[:error] = '更新できませんでした'
-            render :edit_board_task_path
+            flash.now[:error] = '更新できませんでした'
+            render :edit
         end
     end
 
     def destroy
+        board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
+        @task.destroy!
+            redirect_to board_path(board), notice: '削除しました'
     end
 
     private

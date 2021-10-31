@@ -18,4 +18,7 @@
 #
 class Task < ApplicationRecord
     belongs_to :board, optional: true
+
+    validates :title, presence: true
+    validates :title, uniqueness: true
 end

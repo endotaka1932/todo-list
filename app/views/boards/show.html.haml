@@ -16,6 +16,6 @@
               .dropdown-content
                 = link_to 'Edit', edit_board_task_path(board_id: @board, id:task)
                 = link_to 'Delete', board_task_path(board_id: @board, id:task), data: { method: 'delete' }
-  = link_to new_board_path do
+  = link_to new_board_task_path(@board) do
     .add_boards
-      %p.content + Add New Boards
+      %p.content + Add New Cards
