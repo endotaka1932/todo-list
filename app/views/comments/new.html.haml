@@ -1,1 +1,10 @@
-%h= "ppp"
+%h2= 'New Comment'
+- @comment.errors.full_messages.each do |message|
+  %li= message
+= form_with(model: @comment, url: board_task_comments_path, method: 'post' ,local: true) do |f|
+  %div
+    = f.label :content, 'comment'
+  %div
+    = f.text_area 'content', class: 'text'
+  %div
+    = f.submit 'Submit', class: 'btn-primary'
