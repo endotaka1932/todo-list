@@ -20,7 +20,7 @@
           -webkit-transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-          width: 100%;
+          width: 90%;
         }
       }
     
@@ -53,4 +53,10 @@
         top: 39px;
         right: 16px;
     }
+}
+
+.task_edit_btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
 }

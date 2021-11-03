@@ -1,0 +1,24 @@
+.container
+  %h2.task-title= @task.title
+  - if user_signed_in? && current_user.has_have(@task)
+    .task_edit_btn
+      .dropdown
+        = image_tag 'Combined Shape.png'
+        .dropdown-content
+          = link_to 'Edit', edit_board_task_path(board_id: @board, id:@task)
+          = link_to 'Delete', board_task_path(board_id: @board, id:@task), data: { method: 'delete' } 
+  -if @task.eyecatch.attached?
+    .task_image
+      = image_tag @task.eyecatch
+  .tasks    
+    .task_content
+      = @task.content 
+  .comments 
+    %p= 'Comment'
+    .avatar_image 
+      = image_tag 'Oval.png', class: 'boards-avatar'
+-#       .comments_content 
+-#         = @comment.content
+-#   = link_to new_board_task_path(@board) do
+-#     .add_boards
+-#       %p.content + Add New Cards

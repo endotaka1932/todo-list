@@ -12,13 +12,13 @@
           = task.content
         .avatar_image 
           = image_tag 'Oval.png', class: 'boards-avatar'
-        - if user_signed_in? && current_user.has_have(task)
-          .edit-btn
-            .dropdown
-              = image_tag 'Combined Shape.png'
-              .dropdown-content
-                = link_to 'Edit', edit_board_task_path(board_id: @board, id:task)
-                = link_to 'Delete', board_task_path(board_id: @board, id:task), data: { method: 'delete' }
+        -# - if user_signed_in? && current_user.has_have(task)
+        -#   .edit-btn
+        -#     .dropdown
+        -#       = image_tag 'Combined Shape.png'
+        -#       .dropdown-content
+        -#         = link_to 'Edit', edit_board_task_path(board_id: @board, id:task)
+        -#         = link_to 'Delete', board_task_path(board_id: @board, id:task), data: { method: 'delete' }
   = link_to new_board_task_path(@board) do
     .add_boards
       %p.content + Add New Cards
