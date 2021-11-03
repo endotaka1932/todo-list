@@ -1,0 +1,43 @@
+
+.task_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin: 16 * -1 16 * -1 16px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 90%;
+    }
+}
+
+.tasks {
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background:#F4F4F4;
+    border-radius: 10px;
+    position: relative;
+    height: 250px;
+
+.task_content {
+    font-size: 14px;
+    margin-left: 20px;
+    mix-blend-mode: normal;
+    padding-top: 20px;
+    margin-right: 20px;
+}
+}
+
+p {
+    font-size: 26px;
+    line-height: 36px;
+    margin-left: 30px;
+}
