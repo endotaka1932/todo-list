@@ -15,10 +15,12 @@
       = @task.content 
   .comments 
     %p= 'Comment'
-    .avatar_image 
-      = image_tag 'Oval.png', class: 'boards-avatar'
--#       .comments_content 
--#         = @comment.content
--#   = link_to new_board_task_path(@board) do
--#     .add_boards
--#       %p.content + Add New Cards
+    .comments_index
+      .avatar_image 
+        = image_tag 'Oval.png', class: 'boards-avatar'
+      - @comments.each do |comment|      
+        .comments_content  
+          = comment.content
+  = link_to new_board_task_comment_path(board_id: @board, task_id: @task) do
+    .add_comments
+      %p.content + Add New Comment
