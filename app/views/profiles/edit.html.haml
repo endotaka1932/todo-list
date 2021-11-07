@@ -5,6 +5,10 @@
 
   = form_with(model:@profile, url: profile_path, method:'put', local: true) do |f|
     %div
+      = f.label :'avatar', 'プロフィール画像'
+    %div
+      = f.file_field :'avatar', class: 'text-box'
+    %div
       = f.label :'name', '名前'
     %div
       = f.text_field :'name', class: 'text'

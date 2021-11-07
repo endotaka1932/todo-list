@@ -58,4 +58,12 @@ class User < ApplicationRecord
     profile || build_profile
   end
 
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'Oval.png'
+    end
+  end
+
 end

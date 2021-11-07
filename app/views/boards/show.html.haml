@@ -11,7 +11,7 @@
         .task_content 
           = task.content
         .avatar_image 
-          = image_tag 'Oval.png', class: 'boards-avatar'
+          = image_tag current_user.avatar_image
         -# - if user_signed_in? && current_user.has_have(task)
         -#   .edit-btn
         -#     .dropdown

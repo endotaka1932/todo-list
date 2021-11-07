@@ -27,6 +27,7 @@ class ProfilesController < ApplicationController
                 :department,
                 :introduction,
                 :birthday,
+                :avatar
             )
         end
 
