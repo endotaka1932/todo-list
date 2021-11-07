@@ -27,6 +27,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one :profile,dependent: :destroy
 
+  delegate :birthday, :age, :department, to: :profile, allow_nil: true
+
   def has_written(board)
     boards.exists?(id: board.id)
   end
@@ -40,8 +42,17 @@ class User < ApplicationRecord
     #     profile.name
     # else
     #     self.email.splist('@').first
-      profile&.name || self.email.split('@').first
+    profile&.name || self.email.split('@').first
   end
+
+  #delegateで引っ張ってこれる
+  # def department
+  #   profile&.department
+  # end
+
+  # def birthday
+  #   profile&.birthday
+  # end
 
   def prepare_profile
     profile || build_profile
