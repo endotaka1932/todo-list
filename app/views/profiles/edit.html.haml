@@ -1,1 +1,24 @@
-aaaaaaaaaaa
+.container 
+  %h2 プロフィール
+  - @profile.errors.full_messages.each do |message|
+    %li= message
+
+  = form_with(model:@profile, url: profile_path, method:'put', local: true) do |f|
+    %div
+      = f.label :'name', '名前'
+    %div
+      = f.text_field :'name', class: 'text'
+    %div
+      = f.label :'department', '部署名'
+    %div
+      = f.text_field :'department', class: 'text'      
+    %div
+      = f.label :'intorduction', '自己紹介'
+    %div
+      = f.text_area :'introduction', class: 'text'
+    %div
+      = f.label :'birthday', '生年月日'
+    %div
+      = f.date_field :'birthday', class: 'text'
+    %div
+      = f.submit 'Submit', class: 'btn-primary'
