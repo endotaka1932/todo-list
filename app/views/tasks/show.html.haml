@@ -18,9 +18,9 @@
     .comments_index
       .avatar_image 
         = image_tag 'Oval.png', class: 'boards-avatar'
-      - @comments.each do |comment|      
-        .comments_content  
-          = comment.content
+    - @comments.each do |comment|      
+      .comments_content  
+        = comment.content
   = link_to new_board_task_comment_path(board_id: @board, task_id: @task) do
     .add_comments
       %p.content + Add New Comment

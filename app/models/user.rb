@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one :profile,dependent: :destroy
 
   def has_written(board)
     boards.exists?(id: board.id)
@@ -32,5 +33,13 @@ class User < ApplicationRecord
 
   def has_have(task)
     tasks.exists?(id: task.id)
+  end
+
+  def display_name
+    # if profile && profile.name
+    #     profile.name
+    # else
+    #     self.email.splist('@').first
+      profile&.name || self.email.split('@').first
   end
 end
