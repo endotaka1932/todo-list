@@ -1,3 +1,4 @@
+
 header {
     height: 58px;
     border-bottom: 1px #f2f2f2 solid;
@@ -18,6 +19,12 @@ header {
         display: block;
         padding-top: 18px;
         padding-right: 10px;
+    }
+
+    .header_avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
     }
 }
 

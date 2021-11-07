@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-
-    def show
+    before_action :authenticate_user!
+        def show
         @board = Board.find(params[:board_id])
         @task = Task.find(params[:id])
         @comments = @task.comments

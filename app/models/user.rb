@@ -25,6 +25,9 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one :profile,dependent: :destroy
+
+  delegate :birthday, :age, :department, to: :profile, allow_nil: true
 
   def has_written(board)
     boards.exists?(id: board.id)
@@ -33,4 +36,34 @@ class User < ApplicationRecord
   def has_have(task)
     tasks.exists?(id: task.id)
   end
+
+  def display_name
+    # if profile && profile.name
+    #     profile.name
+    # else
+    #     self.email.splist('@').first
+    profile&.name || self.email.split('@').first
+  end
+
+  #delegateで引っ張ってこれる
+  # def department
+  #   profile&.department
+  # end
+
+  # def birthday
+  #   profile&.birthday
+  # end
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'Oval.png'
+    end
+  end
+
 end
