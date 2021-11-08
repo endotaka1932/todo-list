@@ -20,6 +20,7 @@ class Task < ApplicationRecord
     has_one_attached :eyecatch
     has_many :comments, dependent: :destroy
     belongs_to :board, optional: true
+    belongs_to :user
 
     validates :title, presence: true
     validates :title, uniqueness: true

@@ -6,12 +6,13 @@
         - if task.eyecatch.attached?
           .task_image
             = image_tag task.eyecatch
-        .task_title 
+        .task_title
           = task.title
         .task_content 
           = task.content
-        .avatar_image 
-          = image_tag current_user.avatar_image
+        .avatar_image
+          = image_tag task.user.avatar_image
+        .comment_item
         -# - if user_signed_in? && current_user.has_have(task)
         -#   .edit-btn
         -#     .dropdown
