@@ -16,9 +16,9 @@
   .comments 
     %p= 'Comment'
     .comments_index
-    - @comments.each do |comment|   
+    - @comments.each do |comment|
       .avatar_image 
-        = image_tag comment.user.avatar_image         
+        = image_tag comment.user.avatar_image 
       .comments_content  
         = comment.content
   = link_to new_board_task_comment_path(board_id: @board, task_id: @task) do
