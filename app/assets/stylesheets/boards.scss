@@ -46,6 +46,17 @@ $avatar-size: 32px;
         top: 39px;
         right: 16px;
     }
+
+    .comment_disp {
+      position:absolute;
+      top: 120px;
+      right: 30px;
+
+      span {
+        opacity: 0.2;
+        position:absolute;
+      }
+    }
 }
 
 .task_edit_btn {
