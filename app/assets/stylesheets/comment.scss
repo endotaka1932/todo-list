@@ -1,0 +1,48 @@
+.comments_index {
+    position:relative;
+}
+
+.comments_content {
+    height: 57px;
+    margin-top: 35px;
+}
+
+.dropdown-comment {
+    display: inline-block;
+
+}
+
+.dropdown-content-comment {
+    font-weight: normal;
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+}
+
+.dropdown-content-comment a {
+    padding: 4px 16px;
+    text-decoration: none;
+    display: block;
+    color: #616161;
+}
+
+.dropdown-content-comment a:hover {
+    background-color: white;
+}
+
+.dropdown-comment:hover .dropdown-content-comment {
+    display: block;
+}
+
+.comment_edit_btn {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+  }
+  

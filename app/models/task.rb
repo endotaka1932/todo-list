@@ -24,4 +24,9 @@ class Task < ApplicationRecord
 
     validates :title, presence: true
     validates :title, uniqueness: true
+
+    def comment_count
+        comments.count
+    end
+
 end

@@ -12,6 +12,9 @@
           = task.content
         .avatar_image 
           = image_tag task.user.avatar_image
+        .comment_disp 
+          = image_tag 'message-square-outline.png'
+          %span= task.comment_count
         -# - if user_signed_in? && current_user.has_have(task)
         -#   .edit-btn
         -#     .dropdown
