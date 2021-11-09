@@ -19,6 +19,11 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+        board = Board.find(params[:board_id])
+        task = Task.find(params[:task_id])
+        comment = Comment.find(params[:id])
+        comment.destroy!
+            redirect_to board_task_path(board_id: board.id, id: task.id), notice: '削除しました'
     end
 
     private

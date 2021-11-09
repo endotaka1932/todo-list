@@ -15,12 +15,18 @@
       = @task.content 
   .comments 
     %p= 'Comment'
-    .comments_index
     - @comments.each do |comment|
-      .avatar_image 
-        = image_tag comment.user.avatar_image 
-      .comments_content  
-        = comment.content
+      .comments_index
+        .avatar_image 
+          = image_tag comment.user.avatar_image 
+        .comments_content  
+          = comment.content
+            - if user_signed_in? && current_user.comments.exists?(id: comment.id)
+            .comment_edit_btn
+              .dropdown-comment
+                = image_tag 'Combined Shape.png'
+                .dropdown-content-comment
+                  = link_to 'Delete', board_task_comment_path(board_id: @board, task_id:@task, id: comment), data: { method: 'delete' } 
   = link_to new_board_task_comment_path(board_id: @board, task_id: @task) do
     .add_comments
       %p.content + Add New Comment
