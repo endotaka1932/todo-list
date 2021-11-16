@@ -1,0 +1,16 @@
+{
+    "name": "Todo list",
+    "description": "This is todo-list",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/endotaka1932/todo-list",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
